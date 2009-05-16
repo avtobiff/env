@@ -1,0 +1,38 @@
+"
+" avtobiff's vimrc
+"
+" Table of Contents
+" 1.  Appearance
+" 2.  Behaviour
+
+"
+" 1. Appearance
+"
+colorscheme desert
+highlight NonText ctermfg=darkgreen guifg=darkgreen
+
+set number
+set ruler
+set showmatch
+
+syntax enable
+set list!
+set listchars=tab:.\ ,trail:-
+
+
+"
+" 2. Behaviour
+"
+set nocompatible
+
+set directory=~/.vim/swp
+
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+
+set autoindent
+
+set incsearch
+set hlsearch
