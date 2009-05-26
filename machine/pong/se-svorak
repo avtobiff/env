@@ -20,8 +20,8 @@ xkb_symbols "se" {
     name[Group1]="Sweden";
 
     // For macbook. Left pretzel/Apple/oldleavings/Command is AltGr.
-    key <MENU>  { [ ISO_Level_3_Shift				      ] };
-    key <LWIN>  { [ ISO_Level_3_Shift				      ] };
+    key <MENU>  { [ ISO_Level3_Shift				      ] };
+    key <LWIN>  { [ ISO_Level3_Shift				      ] };
 
 
     key <AE05>	{ [         5,    percent,     EuroSign,         cent ]	};
