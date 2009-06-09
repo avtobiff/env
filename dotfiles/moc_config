@@ -3,6 +3,3 @@ StartinMusicDir         = yes
 # Default theme
 #Theme                   = example_theme
 Allow24bitOutput        = yes
-# Make lastfmsubmitd act like a well behaved scrobble client.
-OnSongChange             = "/home/avtobiff/.moc/moc_submit_lastfm --artist %a --title %t --length %d --album %r"
-#OnSongChange            = "/usr/lib/lastfmsubmitd/lastfmsubmit --artist %a --title %t --length %d --album %r"

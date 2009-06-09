@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 
 envdir=$(pwd)
 
@@ -9,7 +7,9 @@ envdir=$(pwd)
 echo "Deploying environment..."
 
 # create infrastructure
-for dir in "$HOME/.moc" "$HOME/.vim/swp" "$HOME/.rtorrent/session"; do
+echo "Creating infrastructure..."
+for dir in "$HOME/.moc" "$HOME/.vim/swp" "$HOME/.rtorrent/session" \
+           "$HOME/.irssi/scripts"; do
     if [ -d "$dir" ]; then
         echo "I: Directory already exists: $dir."
     else
@@ -19,20 +19,17 @@ for dir in "$HOME/.moc" "$HOME/.vim/swp" "$HOME/.rtorrent/session"; do
     fi
 done
 
-# create symlinks.
-for target in $(ls "$envdir"/dotfiles); do
-    # dotfile.
-    link_name=$(echo "$file" | sed 's/^/./')
-    # take care of subdirectories.
-    link_name=$(echo "$file" | sed 's,_,/,')
-    if [ -f "$file" ]; then
-        echo "E: File already exists: $file."
-    elif [ -h "$file" ]; then
-        echo "I: Symlink already exists: $file."
-        echo "I: $(ls -l | awk '{print $8 " " $9 " " $10}')"
-    else
-        ln -s "$target" "$HOME/$link_name"
-    fi
-done
+## create symlinks.
+## quick, dirty, and hardwired for now...
+printf "Creating symlinks... "
+# moc
+ln -s "$envdir/dotfiles/moc_config" "$HOME/.moc/config"
+# vim
+ln -s "$envdir/dotfiles/vimrc" "$HOME/.vimrc"
+# rtorrent
+ln -s "$envdir/dotfiles/rtorrent.rc" "$HOME/.rtorrent.rc"
+# irssi
+ln -s "$envdir/plugins/irssi/hilightwin.pl" "$HOME/.irssi/scripts/hilightwin.pl"
+echo "done."
 
 echo "Deployed environment."
