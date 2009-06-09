@@ -23,7 +23,7 @@ done
 ## quick, dirty, and hardwired for now...
 echo "Creating symlinks... "
 # irssi
-ln -s "$envdir/plugins/irssi/hilightwin.pl" "$HOME/.irssi/scripts/hilightwin.pl"
+ln -s "$envdir/plugins/hilightwin.pl" "$HOME/.irssi/scripts/hilightwin.pl"
 # moc
 ln -s "$envdir/dotfiles/moc_config" "$HOME/.moc/config"
 # rtorrent
