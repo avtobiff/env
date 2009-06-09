@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# Rudimentary firewall.
+# Init script for placement in /etc/init.d/.
+
+IPTABLES=/sbin/iptables
+NAME=fence
+DESC="Rudimentary firewall"
+
+test -x $IPTABLES || exit 0
+
+set -e
+
+
+# Actions
+function stop() {
+    # Clear everything.
+    iptables -F
+}
+
+function start() {
+    # Accept everything from lo and that we have initiated.
+    iptables -A INPUT -i lo -j ACCEPT
+    iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+    # Accept incoming on ports ssh and 8000.
+    iptables -A INPUT -p tcp --dport ssh -j ACCEPT
+    iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
+
+    # Accept ping.
+    iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+
+    # Drop everything else.
+    iptables -A INPUT -j DROP
+}
+
+
+# Command line options
+case "$1" in
+  start|restart)
+    echo -n "Starting $DESC: "
+    stop
+    start
+    echo "$NAME."
+    ;;
+  stop)
+    echo -n "Stopping $DESC: "
+    stop
+    echo "$NAME."
+    ;;
+  *)
+    N=/etc/init.d/$NAME
+    echo "Usage: $N {start|stop|restart}" >&2
+    exit 1
+    ;;
+esac
+
+exit 0
