@@ -28,6 +28,8 @@ ln -s "$envdir/plugins/hilightwin.pl" "$HOME/.irssi/scripts/hilightwin.pl"
 ln -s "$envdir/dotfiles/moc_config" "$HOME/.moc/config"
 # rtorrent
 ln -s "$envdir/dotfiles/rtorrent.rc" "$HOME/.rtorrent.rc"
+# screen
+ln -s "$envdir/dotfiles/screenrc" "$HOME/.screenrc"
 # vim
 ln -s "$envdir/dotfiles/vimrc" "$HOME/.vimrc"
 # wmii
