@@ -2,6 +2,8 @@ directory = ~/data/torrent
 session = ~/.rtorrent/session
 execute_log = ~/.rtorrent/rtorrent.log
 
+check_hash = no
+
 schedule = watch_directory,5,5,load_start=Desktop/torrent/*.torrent
 schedule = untie_directory,5,5,stop_untied=
 
