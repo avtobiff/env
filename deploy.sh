@@ -34,5 +34,7 @@ ln -s "$envdir/dotfiles/screenrc" "$HOME/.screenrc"
 ln -s "$envdir/dotfiles/vimrc" "$HOME/.vimrc"
 # wmii
 ln -s "$envdir/dotfiles/wmiirc" "$HOME/.wmii-3.5/wmiirc"
+# Xdefaults
+ln -s "$envdir/dotfiles/Xdefaults" "$HOME/.Xdefaults"
 
 echo "Deployed environment."
