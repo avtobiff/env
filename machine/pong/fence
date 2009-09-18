@@ -1,15 +1,25 @@
 #!/bin/sh
-
+### BEGIN INIT INFO
+# Provides:          firewall
+# Required-Start:    $syslog
+# Required-Stop:     $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      1
+# Short-Description: Rudimentary firewall
+# Description:       This is a rudimentary firewall for a desktop system.
 # Rudimentary firewall.
-# Init script for placement in /etc/init.d/.
+### END INIT INFO
 
-IPTABLES=/sbin/iptables
-NAME=fence
+# Author: Per Andersson <avtobiff@gmail.com>
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Rudimentary firewall"
+NAME=fence
+IPTABLES=/sbin/iptables
+SCRIPTNAME=/etc/init.d/$NAME
+
 
 test -x $IPTABLES || exit 0
-
-set -e
 
 
 # Actions
