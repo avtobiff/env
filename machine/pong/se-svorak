@@ -12,6 +12,7 @@ partial default alphanumeric_keys
 xkb_symbols "basic" {
     include "latin(type2)"
     include "se(se)"
+    include "ctrl(nocaps)"
 };
 
 partial alphanumeric_keys
@@ -38,7 +39,6 @@ xkb_symbols "se" {
     key <SPCE>	{ [     space,      space,        space, nobreakspace ]	};
 
     include "kpdl(comma)"
-
     include "level3(ralt_switch)"
 };
 
