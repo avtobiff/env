@@ -1,3 +1,3 @@
 #!/bin/sh
 
-urxvt -e vim $1
+urxvt -e vim "+set tw=80" $1
