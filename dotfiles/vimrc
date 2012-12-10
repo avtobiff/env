@@ -18,6 +18,7 @@ set showmatch
 syntax enable
 set list!
 set listchars=tab:.\ ,trail:-
+set colorcolumn=80
 
 
 "
