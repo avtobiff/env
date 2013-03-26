@@ -22,8 +22,12 @@ done
 ## create symlinks.
 ## quick, dirty, and hardwired for now...
 echo "Creating symlinks... "
+# git-buildpackage
+ln -s "$envdir/dotfiles/gbp.conf" "$HOME/.gbp.conf"
 # irssi
 ln -s "$envdir/plugins/hilightwin.pl" "$HOME/.irssi/scripts/hilightwin.pl"
+# lintian
+ln -s "$envdir/dotfiles/lintianrc" "$HOME/.lintianrc"
 # moc
 ln -s "$envdir/dotfiles/moc_config" "$HOME/.moc/config"
 # rtorrent

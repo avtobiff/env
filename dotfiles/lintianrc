@@ -1,0 +1,4 @@
+TMPDIR=/tmp
+verbose = yes
+pedantic = yes
+display-info = yes
