@@ -8,17 +8,48 @@
 "
 " 1. Appearance
 "
-colorscheme desert
-highlight NonText ctermfg=darkgreen guifg=darkgreen
-
-set number
-set ruler
-set showmatch
+set t_Co=256
+colorscheme inkpot
 
 syntax enable
+set number
+set showmode
+set showcmd
+
+" Status line
+set laststatus=2                            " always show status line
+set statusline=
+set statusline +=\ %n                       " buffer number
+set statusline +=\ %.30{getcwd()}           " clipped working directory
+set statusline +=\ %#error#%*               " highlight error
+set statusline +=\ %{&paste?'[paste]':''}   " show paste mode
+set statusline +=\ \ %h%m%r%w\ %<%F         " help/modified/readonly/preview,
+                                            " clipped full path
+set statusline +=%=\ <\ %{&ff}              " middle delimiter, file format
+set statusline +=\ <\ %{strlen(&fenc)?&fenc:'none'}
+                                            " file encoding or "none"
+set statusline +=\ <\ %y                    " file type
+set statusline +=\ <\ %3.6l/%L\ (%P)        " current line/total lines (Top/Bot)
+set statusline +=\ %2.3c\                   " character column
+
+" Current status line white on black, non-current grey on black
+highlight StatusLine   cterm=NONE ctermbg=0 ctermfg=255
+highlight StatusLineNC cterm=NONE ctermbg=0 ctermfg=242
+
+" Paint background black within 80 characters and grey outside
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=233
+
+" Hilight whitespace with green color
 set list!
 set listchars=tab:.\ ,trail:-
-set colorcolumn=81
+highlight WhiteSpace ctermfg=2
+match WhiteSpace /\s\+$\| \+\ze\t\|\t/
+
+" Nice looking highlight for gitcommit
+highlight diffAdded   ctermfg=2
+highlight diffRemoved ctermfg=1
+
 
 
 "
@@ -38,3 +69,5 @@ filetype plugin indent on
 
 set incsearch
 set hlsearch
+
+set showmatch
