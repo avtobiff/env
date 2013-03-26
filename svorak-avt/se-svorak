@@ -20,7 +20,7 @@ xkb_symbols "se" {
 
     name[Group1]="Sweden";
 
-    // For macbook. Left pretzel/Apple/oldleavings/Command is AltGr.
+    // Left Super is AltGr.
     key <MENU>  { [ ISO_Level3_Shift				      ] };
     key <LWIN>  { [ ISO_Level3_Shift				      ] };
 
@@ -273,12 +273,12 @@ xkb_symbols "svorak" {
     name[Group1] = "Sweden - Svorak avt";
 
     include "se(basic)"
+    include "ctrl(nocaps)"
+    include "level3(ralt_alt)"
 
-
+    // Left Super is AltGr.
     key <MENU> { [ ISO_Level3_Shift				     ]  };
-    // For macbook. Left pretzel/Apple/oldleavings/Command is AltGr.
     key <LWIN> { [ ISO_Level3_Shift				     ]  };
-//    key <LWIN> { [ Control_L					     ]  };
 
     key <AD01> { [     aring,      Aring,    backslash		     ]	};
     key <AD02> { [  adiaeresis,	Adiaeresis,  braceleft,  bracketleft ]	};
