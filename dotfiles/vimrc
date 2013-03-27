@@ -39,7 +39,7 @@ highlight StatusLineNC cterm=NONE ctermbg=0 ctermfg=242
 
 " Paint background black within 80 characters and grey outside
 let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=233
+highlight ColorColumn ctermbg=235
 
 " Hilight whitespace with green color
 set list!
