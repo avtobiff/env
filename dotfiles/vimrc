@@ -4,6 +4,7 @@
 " Table of Contents
 " 1.  Appearance
 " 2.  Behaviour
+" 3.  Autocommands
 
 "
 " 1. Appearance
@@ -71,3 +72,32 @@ set incsearch
 set hlsearch
 
 set showmatch
+
+
+
+"
+" 3. Autocommands
+"
+
+" Some file types should wrap their text
+function! s:setupWrapping()
+    set textwidth=72
+endfunction
+
+" Filetypes
+if has("autocmd")
+    " Remember last location in file, but not for commit messages.
+    " see :help last-position-jump
+    au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g`\"" | endif
+
+    " In Makefiles, use real tabs, not tabs expanded to spaces
+    au FileType make setlocal noexpandtab
+
+    " Make sure all markdown files have the correct filetype set and setup
+    " wrapping
+    au BufRead,BufNewFile *.{md,mdwn} set filetype=markdown | call s:setupWrapping()
+
+    " Treat JSON files like JavaScript
+    au BufNewFile,BufRead *.json set ft=javascript
+endif
