@@ -81,7 +81,7 @@ set showmatch
 
 " Some file types should wrap their text
 function! s:setupWrapping()
-    set textwidth=72
+    set textwidth=78
 endfunction
 
 " Filetypes
