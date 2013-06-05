@@ -16,6 +16,7 @@ syntax enable
 set number
 set showmode
 set showcmd
+set title
 
 " Status line
 set laststatus=2                            " always show status line
