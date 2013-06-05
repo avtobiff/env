@@ -22,6 +22,8 @@ done
 ## create symlinks.
 ## quick, dirty, and hardwired for now...
 echo "Creating symlinks... "
+# devscripts
+ln -s "$envdir/dotfiles/devscripts" "$HOME/.devscripts"
 # git-buildpackage
 ln -s "$envdir/dotfiles/gbp.conf" "$HOME/.gbp.conf"
 # irssi
