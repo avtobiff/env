@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# load resources
+xrdb -merge .Xresources
+
+# background color
+xsetroot -display $DISPLAY -solid \#222222
+
+# setup icon tray
+trayer --edge bottom --align right --SetDockType true --SetPartialStrut true \
+      --expand true --width 10 --transparent true --tint 0x000000 --height 17 &
+
+# autostart programs
+xscreensaver -no-splash &
+
+if [ -x /usr/bin/xfce4-power-manager ]; then
+    sleep 3
+    xfce4-power-manager &
+fi
+
+exec xmonad
