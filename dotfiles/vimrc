@@ -6,6 +6,17 @@
 " 2.  Behaviour
 " 3.  Autocommands
 
+" 0. TODO
+" * Faster buffer handling and moving.
+"   * leader + hjkl to move and HJKL to move around, also leader + =
+"   * leader + pn to cycle buffers
+"   * leader + b to show buffer list
+"   * leader + shift/()<> to grow/shrink window
+" * add/remove first character in rows in visual selection
+"   * leader + a<character>/r
+" * reformat paragraph wrap, Vgq
+" * shortcut for :r !date +%Y%m%d
+
 "
 " 1. Appearance
 "
