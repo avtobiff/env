@@ -9,7 +9,7 @@ echo "Deploying environment..."
 # create infrastructure
 echo "Creating infrastructure..."
 for dir in "$HOME/.irssi/scripts" "$HOME/.moc" "$HOME/.rtorrent/session" \
-           "$HOME/.vim/swp" "$HOME/.vim/undo" "$HOME/.wmii-3.5" "$HOME/.xmonad"; do
+           "$HOME/.vim/swp" "$HOME/.vim/undo" "$HOME/.xmonad"; do
     if [ -d "$dir" ]; then
         echo "I: Directory already exists: $dir."
     else
@@ -40,8 +40,6 @@ ln -s "$envdir/dotfiles/rtorrent.rc" "$HOME/.rtorrent.rc"
 ln -s "$envdir/dotfiles/screenrc" "$HOME/.screenrc"
 # vim
 ln -s "$envdir/dotfiles/vimrc" "$HOME/.vimrc"
-# wmii
-ln -s "$envdir/dotfiles/wmiirc" "$HOME/.wmii-3.5/wmiirc"
 # Xdefaults
 ln -s "$envdir/dotfiles/Xdefaults" "$HOME/.Xdefaults"
 # xmonad
