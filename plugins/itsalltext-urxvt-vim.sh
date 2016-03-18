@@ -1,3 +1,3 @@
 #!/bin/sh
 
-urxvt -e vim "+set tw=80" $1
+urxvt -e vim "+set ft=mail" $1
