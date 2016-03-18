@@ -86,6 +86,8 @@ set hlsearch
 
 set showmatch
 
+set tags+=.git/tags
+
 set undodir=.vim/undo
 
 
