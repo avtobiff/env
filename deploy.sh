@@ -9,7 +9,7 @@ echo "Deploying environment..."
 # create infrastructure
 echo "Creating infrastructure..."
 for dir in "$HOME/.irssi/scripts" "$HOME/.moc" "$HOME/.rtorrent/session" \
-           "$HOME/.vim/swp" "$HOME/.wmii-3.5" "$HOME/.xmonad"; do
+           "$HOME/.vim/swp" "$HOME/.vim/undo" "$HOME/.wmii-3.5" "$HOME/.xmonad"; do
     if [ -d "$dir" ]; then
         echo "I: Directory already exists: $dir."
     else
