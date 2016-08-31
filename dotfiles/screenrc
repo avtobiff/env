@@ -1,1 +1,3 @@
 startup_message off
+# use current bg color for erased chars
+defbce on
