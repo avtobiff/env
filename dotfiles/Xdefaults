@@ -1,5 +1,7 @@
 URxvt*termName: rxvt
 
+#URxvt.font: terminus-iso8859-15-20
+
 # Borderless, no scrollbar
 URxvt*scrollBar_right: false
 URxvt*scrollBar: false
