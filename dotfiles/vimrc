@@ -90,6 +90,8 @@ set tags+=.git/tags
 
 set undodir=.vim/undo
 
+set wildmenu
+
 
 
 "
