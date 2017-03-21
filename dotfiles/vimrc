@@ -73,6 +73,8 @@ set nocompatible
 
 set directory=~/.vim/swp
 
+execute pathogen#infect()
+
 set expandtab
 set smarttab
 set shiftwidth=4
