@@ -82,6 +82,7 @@ set tabstop=4
 
 set autoindent
 filetype plugin indent on
+set nojoinspaces
 
 set incsearch
 set hlsearch
